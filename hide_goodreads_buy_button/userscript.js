@@ -6,6 +6,6 @@
 // @author       Cyrill Küttel
 // @match        https://www.goodreads.com/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
-// @require      https://raw.githubusercontent.com/cyrillkuettel/userscripts/master/hide_button_goodreads.js
+// @require      https://raw.githubusercontent.com/cyrillkuettel/userscripts/master/hide_goodreads_buy_button/hide_button_goodreads.js
 // @grant        none
 // ==/UserScript==
