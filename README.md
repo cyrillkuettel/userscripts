@@ -15,7 +15,3 @@ file. (Ctrl + S)
 The advantages of this approach, is that youcan  automatically receive updates. 
 (Because the script is sourced on this repository). If you don't want that, just copy the code itself into your collection..
 
-# Ideas:
-_Google auto decline cookies_
-_In google searhc, when tab is first pressed, and the "Skip to main content"
-appears, I want that always so just simulate a click on that_
