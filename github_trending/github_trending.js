@@ -1,13 +1,3 @@
-// ==UserScript==
-// @name         github trending
-// @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  show the github trending button on homepage
-// @author       Cyrill Küttel
-// @match        https://github.com/*
-// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
-// @grant        none
-// ==/UserScript==
 
 (function () {
     'use strict';
