@@ -1,12 +1,9 @@
-
-
 (function() {
     'use strict';
 
     window.addEventListener('UNSTABLE_editor:extensions', (event) => {
 
          const retry = setInterval(() => {
-             //console.log(event);
              const { CodeMirrorVim, extensions } = event.detail
              if (CodeMirrorVim.Vim == undefined) {
                  return;
