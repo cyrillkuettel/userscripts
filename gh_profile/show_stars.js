@@ -15,9 +15,6 @@
         (function () {
                     
           const parent = document.querySelector('turbo-frame#user-profile-frame').firstElementChild;
-          console.log(parent);
-          console.log(parent.children.length);
-
           // swap
           let tmp = parent.children[1];
           parent.insertBefore(parent.children[2], tmp);
