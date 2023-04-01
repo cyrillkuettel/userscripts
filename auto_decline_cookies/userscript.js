@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name         github trending
+// @name         Auto decline cookies
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  show the github trending button on homepage
+// @description  Declines cookies in the popup which appears in google
 // @author       Cyrill Küttel
-// @match        https://www.google.com/*
 // @match        https://google.com/*
+// @match        https://www.google.com/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @require      https://raw.githubusercontent.com/cyrillkuettel/userscripts/master/auto_decline_cookies/auto_decline_cookies.js
 // @grant        none
