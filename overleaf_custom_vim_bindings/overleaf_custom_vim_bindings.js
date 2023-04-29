@@ -1,17 +1,17 @@
 (function() {
-    'use strict';
+ 'use strict';
 
-    window.addEventListener('UNSTABLE_editor:extensions', (event) => {
+ window.addEventListener('UNSTABLE_editor:extensions', (event) => {
 
          const retry = setInterval(() => {
-             const { CodeMirrorVim, extensions } = event.detail
-             if (CodeMirrorVim.Vim == undefined) {
+                 const { CodeMirror, CodeMirrorVim, extensions } = event.detail;
+                 if (CodeMirrorVim.Vim == undefined) {
                  return;
-             }
-             CodeMirrorVim.Vim.map('jk', '<Esc>', 'insert')
-             console.log("Custom key bindings applied")
-         }, 100);
+                 }
+                 CodeMirrorVim.Vim.map('jk', '<Esc>', 'insert')
+                 console.log("Custom key bindings applied")
+                 }, 100);
 
 
-    })
-})();
+         })
+ })();
