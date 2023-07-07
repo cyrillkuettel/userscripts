@@ -14,6 +14,13 @@ file. (Ctrl + S)
 > **Note**
 > If you don't want to automatically receive updates (from this repo), you can also just not use
 > the `userscript.js`. Instead copy the header from `userscript.js` and add it at
-> the top of the other file. . 
+> the top of the other file. 
+
+
+## Why are all functions wrapped in a IIFE (Immediately Invoked Function
+Expression)?
+
+This prevents polluting the global namespace. This way we can just paste the
+snipped in the console over and over again, for testing. 
 
 
