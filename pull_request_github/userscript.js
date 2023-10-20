@@ -1,4 +1,4 @@
-ggV:wq
+// ==UserScript==
 // @name         Minimize .po files
 // @namespace    http://tampermonkey.net/
 // @version      0.1
@@ -9,4 +9,3 @@ ggV:wq
 // @grant        none
 // @require      https://raw.githubusercontent.com/cyrillkuettel/userscripts/master/pull_request_github/userscript.js
 // ==/UserScript==
-
