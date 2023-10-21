@@ -7,5 +7,5 @@
 // @match        https://github.com/*/*/pull/*/files
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
-// @require      https://raw.githubusercontent.com/cyrillkuettel/userscripts/master/pull_request_github/userscript.js
+// @require      https://raw.githubusercontent.com/cyrillkuettel/userscripts/master/pull_request_github/code.js
 // ==/UserScript==
