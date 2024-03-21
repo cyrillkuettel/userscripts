@@ -5,40 +5,29 @@
 // @match     https://lichess.org/
 // ==/UserScript==
 
-
-
 (function() {
     'use strict';
 
-function sleep(ms) {
-  const end = Date.now() + ms;
-  while (Date.now() < end) continue;
-}
-
-main();
-
-    document.addEventListener('DOMContentLoaded', function() {
-        main();
+    const observer = new MutationObserver((mutations, obs) => {
+        const nodes = document.querySelectorAll('.lobby__app__content > div');
+        if (nodes.length > 11 ) {
+            main();
+            obs.disconnect(); // Stop observing after main is called
+        }
     });
 
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
 
     function main() {
-
-sleep(100);
-
-        (function() {
-
-            const nodes = document.querySelectorAll('.lobby__app__content > div'); // Select all child nodes
-            console.log(nodes);
-            nodes.forEach(node => {
-
-                const firstChar = node.getAttribute('data-id').split('+')[0];
-                if (!(Number(firstChar) >= 30)) {
-                    node.remove();
-                }
-
-            });
-
-        })();
+        const nodes = document.querySelectorAll('.lobby__app__content > div');
+        nodes.forEach(node => {
+            const firstChar = node.getAttribute('data-id').split('+')[0];
+            if (!(Number(firstChar) >= 30)) {
+                node.remove();
+            }
+        });
     }
 })();
