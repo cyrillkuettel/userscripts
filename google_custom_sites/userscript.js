@@ -1,8 +1,9 @@
+
 // ==UserScript==
 // @name         Simple Google Site Search
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  Adds site:reddit.com to search
+// @description  Google search is becoming largely useless. I frequently find myself using the `site` operator. This userscript implements a autocomplete feature for typing "site:the-url-here.com"
 // @author       Your name
 // @match        https://www.google.com/*
 // @match        https://google.com/*
@@ -11,6 +12,17 @@
 
 (function() {
     'use strict';
+
+
+    // ===============================
+    // Define your shortcuts here:
+    // ===============================
+    const shortcuts = [
+        { trigger: 'site:r', completion: 'site:reddit.com' },
+        { trigger: 'site:gi', completion: 'site:github.com' },
+        { trigger: 'site:stac', completion: 'site:stackexchange.com' },
+    ];
+
 
     // Create and style the status box
     const status = document.createElement('div');
@@ -79,17 +91,13 @@ innerContent.style.cssText = `
         collapsedContent.style.opacity = '0';
     });
 
-/*
     status.addEventListener('mouseleave', () => {
         status.style.width = 'auto';
         status.style.height = '20px';
         status.style.padding = '10px 12px';
         innerContent.style.opacity = '0';
         collapsedContent.style.opacity = '1';
-    });*/
-    const shortcuts = [
-        { trigger: 'site:', completion: 'site:reddit.com' },
-    ];
+    });
 
     function findSearchBox() {
         return (
@@ -161,8 +169,11 @@ innerContent.style.cssText = `
         
         searchBox.addEventListener('input', (e) => {
             const val = e.target.value;
-            if (val.endsWith('site:')) {
-                e.target.value = val.slice(0, -5) + 'site:reddit.com ';
+            for (const shortcut of shortcuts) {
+                if (val.endsWith(shortcut.trigger)) {
+                    e.target.value = val.slice(0, -shortcut.trigger.length) + shortcut.completion + ' ';
+                    break;
+                }
             }
         });
 
